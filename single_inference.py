@@ -60,7 +60,7 @@ def inference(a, h):
         audio = audio.cpu().numpy().astype("int16")
 
         output_file = os.path.join(
-            a.output_dir, a.output_filename + ".wav"
+            a.output_dir, a.output_filename
         )
         write(output_file, h.sampling_rate, audio)
         print(output_file)
