@@ -75,7 +75,8 @@ def main():
                                                             os.path.dirname(__file__),
                                                             "..",
                                                             "..", 
-                                                            "synthesized_sounds"))
+                                                            "data",
+                                                            "generated"))
     parser.add_argument("--output_filename", required=True)
     parser.add_argument("--checkpoint_file", required=True)
     parser.add_argument("--use_cuda_kernel", action="store_true", default=False)
