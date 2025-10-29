@@ -79,12 +79,12 @@ def main():
                                                             "generated"))
     parser.add_argument("--output_filename", required=True)
     parser.add_argument("--checkpoint_file", required=True)
+    parser.add_argument("--respective_config", required=True)
     parser.add_argument("--use_cuda_kernel", action="store_true", default=False)
 
     a = parser.parse_args()
 
-    config_file = os.path.join(os.path.split(a.checkpoint_file)[0], "config.json")
-    with open(config_file) as f:
+    with open(a.respective_config) as f:
         data = f.read()
 
     global h
