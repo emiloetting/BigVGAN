@@ -60,7 +60,7 @@ def inference(a, h):
         audio = audio.cpu().numpy().astype("int16")
 
         output_file = os.path.join(
-            a.output_dir, a.filename + ".wav"
+            a.output_dir, a.output_filename + ".wav"
         )
         write(output_file, h.sampling_rate, audio)
         print(output_file)
@@ -76,7 +76,7 @@ def main():
                                                             "..",
                                                             "..", 
                                                             "synthesized_sounds"))
-    parser.add_argument("--filename", required=True)
+    parser.add_argument("--output_filename", required=True)
     parser.add_argument("--checkpoint_file", required=True)
     parser.add_argument("--use_cuda_kernel", action="store_true", default=False)
 
